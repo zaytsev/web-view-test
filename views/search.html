@@ -1,0 +1,21 @@
+<html>
+<head>
+</head>
+<body>
+<form action="" method="GET">
+<input type="text" name="q" value="{{query}}" />
+<input type="submit" />
+</form>
+<ul>
+<!-- {{#each results}} -->
+<li>
+  <a href="{{url}}">{{firstname}} {{lastname}}</a>
+  {{#if picture.thumbnail}}
+  <img src="{{thumbnail}}" alt="picture" />
+  {{/if}}
+ </ul>
+</li>
+<!-- {{/each}} -->
+</ul>
+</body>
+</html>
