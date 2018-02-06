@@ -1,0 +1,17 @@
+<html>
+<head>
+<link href="{{ asset 'css/styles.css' }}" rel="stylesheet">
+</head>
+<body>
+<div id="post-id">{{ profile.id }}</div>
+<div id="posts-list">
+<!-- {{#each posts}} -->
+<div id="post-{{id}}">{{ text }}</div>
+<!-- {{#each images}} -->
+<img src="{{ thumbnail }}" alt="{{ url }}" />
+<!-- {{/each}} -->
+<!-- {{/each}} -->
+</div>
+</body>
+<script src="{{ asset 'js/main.js' }}"></script>
+</html>
