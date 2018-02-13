@@ -1,8 +1,4 @@
-<html>
-<head>
-<link href="{{ asset 'css/styles.css' }}" rel="stylesheet">
-</head>
-<body>
+{{#partial "body"}}
 <div id="post-id">{{ post.id }}</div>
 <div id="comments-list">
 <!-- {{#each comments}} -->
@@ -10,6 +6,6 @@
 <!-- {{/each}} -->
 </div>
 <img src="{{ asset 'img/monkey.jpg' }}" alt="" />
-</body>
-<script src="{{ asset 'js/main.js' }}"></script>
-</html>
+{{/partial}}
+
+{{> "views/base.html"}}
