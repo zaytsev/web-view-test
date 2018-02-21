@@ -1,17 +1,15 @@
 <html>
 <head>
-<link href="{{ asset 'css/styles.css' }}" rel="stylesheet">
+<link th:href="@{/assets/css/styles.css}" rel="stylesheet">
 </head>
 <body>
-<div id="profile-id">{{ profile.id }}</div>
+<div id="profile-id" th:text="${profile.id}">Profile ID</div>
 <div id="posts-list">
-<!-- {{#each posts}} -->
-<div id="post-{{id}}">{{ text }}</div>
-<!-- {{#each images}} -->
-<img src="{{ thumbnail }}" alt="{{ url }}" />
-<!-- {{/each}} -->
-<!-- {{/each}} -->
+<div th:each="post : ${posts}" th:id="'post-' + ${post.id}">
+<p th:text="${post.text}">text</p>
+<img th:each="img : ${post.images}" th:src="${img.thumbnail}" th:alt="${img.url}" />
+</div>
 </div>
 </body>
-<script src="{{ asset 'js/main.js' }}"></script>
+<script th:src="@{/assets/js/main.js}"></script>
 </html>

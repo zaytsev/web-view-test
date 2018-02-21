@@ -3,18 +3,14 @@
 </head>
 <body>
 <form action="" method="GET">
-<input type="text" name="q" value="{{query}}" />
+<input type="text" name="q" th:value="${query}" value="Search" />
 <input type="submit" />
 </form>
 <ul>
-<!-- {{#each results}} -->
-<li>
-<a href="{{url}}">{{firstname}} {{lastname}}</a>
-<!-- {{#if picture}} -->
-<img src="{{picture.thumbnail}}" alt="picture" />
-<!-- {{/if}} -->
+<li th:each="profile : ${results}">
+<a th:href="${profile.url}" th:text="${profile.firstname} + ' ' + ${profile.lastname}">John Doe</a>
+<img th:src="${profile.picture.thumbnail}" alt="picture" />
 </li>
-<!-- {{/each}} -->
 </ul>
 </body>
 </html>

@@ -1,11 +1,13 @@
-{{#partial "body"}}
-<div id="post-id">{{ post.id }}</div>
+<html>
+<head>
+<link th:href="@{/assets/css/styles.css}" rel="stylesheet">
+</head>
+<body>
+<div id="post-id" th:text="${post.id}">post id</div>
 <div id="comments-list">
-<!-- {{#each comments}} -->
-<div id="comment-{{id}}">{{ text }}</div>
-<!-- {{/each}} -->
+<div th:each="comment : ${comments}" th:id="'comment-' + ${comment.id}" th:text="${comment.text}">comment</div>
 </div>
-<img src="{{ asset 'img/monkey.jpg' }}" alt="" />
-{{/partial}}
-
-{{> "views/base.html"}}
+<img th:src="@{/assets/img/monkey.jpg}" alt="" />
+</body>
+<script th:src="@{/assets/js/main.js}"></script>
+</html>
